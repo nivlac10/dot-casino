@@ -12,7 +12,7 @@ const Helpers = use('Helpers')
 
 class User extends Model {
   static get visible() {
-    return ['id', 'first_name', 'last_name', 'username', 'avatar']
+    return ['id', 'email', 'first_name', 'last_name', 'username', 'avatar', 'balance','created_at']
   }
 
   static get computed() {

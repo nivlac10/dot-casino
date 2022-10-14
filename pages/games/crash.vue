@@ -56,7 +56,7 @@
               type="button"
               variant="outline"
               @click="bet.amount += 100000"
-              >Все</t-button
+              >All</t-button
             >
           </div>
           <label class="mb-3 font-semibold text-md" for="auto">{{
@@ -89,6 +89,21 @@
       <div class="col-span-8">
         <crash-table :socket="socket" />
       </div>
+      <div class="col-span-8">
+        <div class="px-8 py-6 bg-white rounded-xl">
+          <h2 class="mb-3 font-semibold text-md">Bet History</h2>
+          <t-table
+          :headers="['Bet ID', 'Bet Amount', 'Crash Rate', 'Results', 'Username', 'Date']"
+          :data="history"
+          :per-page="10"
+          :class="history-table"
+          >
+            <thead style="background-color:#ffb200;">
+
+            </thead>
+          </t-table>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -108,6 +123,8 @@ export default {
         rate_auto: null,
       },
       socket: null,
+      history: [],
+      
     }
   },
   computed: {
@@ -183,5 +200,16 @@ export default {
       })
     },
   },
+  async mounted() {
+      let betHistory = await this.$axios.get('http://127.0.0.1:3333/api/history')
+    
+      this.history = betHistory.data.map(row => [row.id, row.amount, row.rate_final, row.status, row.user.username, row.created_at])
+      console.log(betHistory.data.id)
+  },
 }
 </script>
+<style lang="scss">
+  .history-table {
+    background-color: #ffb200;
+  }
+</style>

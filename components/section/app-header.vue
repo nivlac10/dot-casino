@@ -8,9 +8,9 @@
         class="header__link header__link--logo"
         exact-active-class="header__link--active"
       >
-        <img src="/logo.svg" class="w-auto h-2/3" alt="" />
+        <img src="/OT.svg" class="w-auto h-2/3" alt="" />
       </nuxt-link>
-      <app-language-switcher class="hidden xl:block" />
+      
       <div class="flex-1 md:hidden !ml-0">
         <t-button
           class="header__burger"
@@ -63,7 +63,7 @@
             <span>{{ $auth.user.last_name }}</span>
           </template>
           <template v-else-if="$auth.user.username">
-            <span>{{ $auth.user.username }}</span>
+            <span>Welcome, {{ $auth.user.username }}!</span>
           </template>
           <template v-else>
             <span>{{ $t('profile-you') }}</span>
@@ -113,7 +113,6 @@ export default {
   components: {
     EditIcon,
     LogoutIcon,
-    AppLanguageSwitcher,
     UserBalance,
     AppSidebar,
   },

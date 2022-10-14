@@ -5,7 +5,7 @@ const Model = use('Model')
 
 class CrashBet extends Model {
   static get visible() {
-    return ['id', 'amount', 'rate_final', 'status', 'user']
+    return ['id', 'amount', 'rate_final', 'status', 'username', 'created_at', 'user_id']
   }
 
   user() {

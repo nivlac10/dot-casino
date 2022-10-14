@@ -36,7 +36,7 @@
               </p>
               <div class="flex items-center">
                 <p class="flex items-center font-semibold text-md">
-                  {{ user.fullname ? user.fullname : 'Установить' }}
+                  {{ user.fullname ? user.fullname : 'Set Up' }}
                   <button
                     class="ml-1 transition-all rounded-md bg-cream hover:bg-primary"
                     type="button"
@@ -49,30 +49,7 @@
             </div>
           </div>
         </div>
-        <div class="p-8 bg-white rounded-xl">
-          <h2 class="mb-3 text-lg font-semibold leading-none">
-            {{ $t('socials') }}
-          </h2>
-          <div class="flex flex-col space-y-3">
-            <t-button
-              variant="strong"
-              class="text-white bg-vk"
-              :disabled="hasSocial('vk')"
-              @click="connectVk"
-            >
-              <div class="flex items-center justify-center">
-                <VkIcon fill="#fff" class="inline-block w-4 h-4 mr-2" />
-                <span>{{ $t('connect') }} ВКонтакте</span>
-              </div></t-button
-            >
-            <t-button variant="strong" class="text-white bg-google"
-              >{{ $t('connect') }} Google</t-button
-            >
-            <t-button variant="strong" class="text-white bg-facebook"
-              >{{ $t('connect') }} Facebook</t-button
-            >
-          </div>
-        </div>
+        
       </div>
       <div class="col-span-4 lg:col-span-3">
         <div class="p-8 bg-white rounded-xl">
@@ -191,7 +168,7 @@
 <script>
 import EditIcon from '@/static/img/icon/edit.svg?inline'
 import CheckIcon from '@/static/img/icon/check.svg?inline'
-import VkIcon from '@/static/img/social/vk.svg?inline'
+
 import ModalProfileFullname from '~/components/modal/modal-profile-fullname.vue'
 
 export default {
@@ -199,7 +176,7 @@ export default {
     EditIcon,
     CheckIcon,
     ModalProfileFullname,
-    VkIcon,
+
   },
   data() {
     return {

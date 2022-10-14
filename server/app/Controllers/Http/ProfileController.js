@@ -68,7 +68,7 @@ class ProfileController {
         await user.save()
         return response.status(200).send({
           status: 'success',
-          message: 'Ваш аватар обновлён',
+          message: 'Your avatar has been updated',
         })
       }
 
@@ -86,25 +86,25 @@ class ProfileController {
           return response.status(400).send({
             status: 'error',
             message:
-              'Вы уже сделали запрос на смену. Проверьте почту или повторите через 15 минут.',
+              'You have already made a change request. Check your email or try again in 15 minutes.',
           })
         }
         return response.status(200).send({
           status: 'success',
-          message: 'На вашу почту отправлено подтверждение смены почты',
+          message: 'A confirmation of the mail change was sent to your email',
         })
       } else {
         user.merge(data)
         await user.save()
         return response
           .status(200)
-          .send({ status: 'success', message: 'Профиль успешно изменён' })
+          .send({ status: 'success', message: 'Profile updated successfully' })
       }
     } catch (e) {
       console.log(e)
       return response
         .status(400)
-        .send({ status: 'error', message: 'Ошибка запроса' })
+        .send({ status: 'error', message: 'Request Error' })
     }
   }
 
@@ -114,7 +114,7 @@ class ProfileController {
     if (!user) {
       return response.status(400).send({
         status: 'error',
-        message: 'Вы не авторизованы! Войдите в профиль и повторите попытку.',
+        message: 'You are not logged in! Log in to your profile and try again.',
       })
     }
     const confirmation = await EmailConfirmation.findBy('token', data.token)
@@ -124,12 +124,12 @@ class ProfileController {
       await confirmation.delete()
       return response.status(200).send({
         status: 'success',
-        message: 'Почта успешно изменена!',
+        message: 'Mail has been changed successfully!',
       })
     }
     return response.status(400).send({
       status: 'error',
-      message: 'Ошибка! Ссылка истекла, выполните запрос повторно.',
+      message: 'Error! Link has expired, please try again.',
     })
   }
 }

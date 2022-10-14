@@ -6,35 +6,31 @@
       <div class="flex items-start space-x-2">
         <TelegramIcon class="w-4 h-auto" />
         <div class="flex flex-col text-sm leading-none">
-          <span class="mb-1">Телеграм</span>
+          <span class="mb-1">Telegram</span>
           <a href="https://t.me/ez_cash_gg" target="_blank">
-            <strong>@ez_cash_gg</strong>
+            <strong>@dot_casino</strong>
           </a>
         </div>
       </div>
-      <div class="flex items-start space-x-2">
-        <VkIcon class="w-4 h-auto" />
-        <div class="flex flex-col text-sm leading-none">
-          <span class="mb-1">ВКонтакте</span>
-          <a href="https://vk.com/ezcash_official" target="_blank">
-            <strong>ezcash_official</strong>
-          </a>
-        </div>
-      </div>
+    
       <div class="flex items-start space-x-2">
         <EmailIcon class="w-4 h-auto" />
         <div class="flex flex-col text-sm leading-none">
           <span class="mb-1">Email</span>
           <a href="mailto:help@ezcash.gg" target="_blank">
-            <strong>help@ezcash.gg</strong>
+            <strong>help@dotcasino.com</strong>
           </a>
         </div>
       </div>
       <div class="flex flex-col space-y-1 leading-none">
-        <a href="#" class="font-semibold">Пользовательское соглашение</a>
-        <a href="#" class="font-semibold">Политика конфиденциальности</a>
+        <a href="#" class="font-semibold">User Agreement</a>
+      </div>
+      <div class="flex flex-col space-y-1 leading-none">
+        <a href="#" class="font-semibold">Privacy Policy</a>
+      </div>
+      <div class="flex flex-col space-y-1 leading-none">
         <nuxt-link :to="{ name: 'help' }" class="font-semibold"
-          >Помощь</nuxt-link
+          >Help Centre</nuxt-link
         >
       </div>
     </div>
@@ -43,11 +39,11 @@
 
 <script>
 import TelegramIcon from '@/static/img/icon/social/telegram.svg?inline'
-import VkIcon from '@/static/img/icon/social/vk.svg?inline'
+
 import EmailIcon from '@/static/img/icon/email.svg?inline'
 
 export default {
-  components: { TelegramIcon, VkIcon, EmailIcon },
+  components: { TelegramIcon, EmailIcon },
 }
 </script>
 

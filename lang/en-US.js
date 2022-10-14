@@ -8,11 +8,11 @@ export default {
   'profile-exit': 'Logout',
   play: 'Play',
   'description-wheel':
-    'A version of roulette with 54 numbers: 26 black, 17 yellow, 10 red and 1 green. Each round the system chooses a random number. The task is extremely simple: place a bet on the color that you think will fall out. ',
+    'A version of roulette with 54 numbers: 26 black, 17 yellow, 10 red and 1 green. The task is extremely simple: place a bet on the color that you think will fall out. ',
   'description-pvp':
     'This is an extremely simple but very interesting mode. All participants make any bet with coins, and a common bank is formed.',
   'description-crash':
-    'This is a game mode in which you need to predict at what coefficient the crash will occur and the game will stop.',
+    'The concept is pretty simple. The players are given time to place bets and after the betting period expires, the odds progressively grow until the growth vector randomly crashes. Start playing if you enjoy some fast paced games!',
   'description-dice':
     'A game mode in which you yourself choose the chance of winning, but remember: the higher the odds, the less chance of winning.',
   'description-coinflip':

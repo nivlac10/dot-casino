@@ -2,7 +2,7 @@
   <div class="spoiler">
     <div class="spoiler__header" @click="active = !active">
       <img src="/img/icon/question.svg" class="mr-4" alt="Вопрос" />
-      <slot name="title">Что это за сайт?</slot>
+      <slot name="title">About Win Casino</slot>
       <div class="spoiler__toggler">
         <img
           class="spoiler__arrow"
@@ -15,14 +15,12 @@
     <div ref="body" class="spoiler__body" :style="{ height: bodyHeight }">
       <p class="pb-4">
         <slot name="text"
-          >EZCASH – финансовые игры с выводом реальных средств. На данный момент
-          на сайте представлены 5 самых популярных денежных игр. EZCASH
-          зарегистрирована в Великобритании, и ведет свою деятельность в
-          соответствии со всеми установленными правовыми нормами.
+          >Win Casino is a gambling site that features over 1,000+ of popular games within the industry. WinCasino is registered under Curacao operating license, WinCasino conducts its operations in accordance with all applicable laws and regulations in Curacao.
         </slot>
       </p>
     </div>
   </div>
+  
 </template>
 
 <script>

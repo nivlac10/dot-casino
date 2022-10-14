@@ -7,20 +7,21 @@
             <use xlink:href="/img/icon/free/sprite.svg#close"></use>
           </svg>
         </button>
-        <h1 class="sidebar__title">МЕНЮ</h1>
+        <h1 class="sidebar__title">MENU</h1>
         <nav class="sidebar__nav">
+          <nuxt-link
+            :to="{ name: 'index' }"
+            class="sidebar__link"
+            :exact-active-class="`sidebar__link--active`"
+            >Home Page</nuxt-link
+          >
           <nuxt-link
             :to="{ name: 'help' }"
             class="sidebar__link"
             :exact-active-class="`sidebar__link--active`"
-            >Помощь</nuxt-link
+            >Help Centre</nuxt-link
           >
-          <nuxt-link
-            :to="{ name: 'free-coins' }"
-            class="sidebar__link"
-            :exact-active-class="`sidebar__link--active`"
-            >Бесплатные монеты</nuxt-link
-          >
+          
         </nav>
       </div>
       <div class="sidebar__footer">
@@ -31,9 +32,7 @@
             <a href="#">
               <TelegramIcon class="w-auto h-6" />
             </a>
-            <a href="#">
-              <VkIcon class="w-auto h-8" />
-            </a>
+           
           </div>
           <div class="flex items-end justify-end flex-1">
             <button>
@@ -50,14 +49,14 @@
 <script>
 import appLanguageSwitcher from '@/components/ui/app-language-switcher.vue'
 import TelegramIcon from '@/static/img/icon/social/telegram.svg?inline'
-import VkIcon from '@/static/img/icon/social/vk.svg?inline'
+
 import DarkIcon from '@/static/img/icon/mode-dark.svg?inline'
 import LightIcon from '@/static/img/icon/mode-light.svg?inline'
 export default {
   components: {
     appLanguageSwitcher,
     TelegramIcon,
-    VkIcon,
+    
     DarkIcon,
     LightIcon,
   },

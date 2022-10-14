@@ -6,16 +6,16 @@
       </svg>
     </template>
     <template #header>
-      <h3>Регистрация</h3>
+      <h3>Sign Up</h3>
     </template>
-    <section-social class="mb-5" />
+    
     <form class="grid grid-cols-1 gap-5" @submit.prevent="register">
       <div class="relative">
         <t-input
           v-model="user.username"
           class="!pl-12"
           variant="strong"
-          placeholder="Логин"
+          placeholder="Enter your username"
         ></t-input>
         <img
           class="absolute transform -translate-y-1/2 top-1/2 left-4"
@@ -29,7 +29,7 @@
           class="!pl-12"
           variant="strong"
           type="password"
-          placeholder="Пароль"
+          placeholder="Enter your password"
         ></t-input>
         <img
           class="absolute transform -translate-y-1/2 top-1/2 left-4"
@@ -43,7 +43,7 @@
           class="!pl-12"
           variant="strong"
           type="password"
-          placeholder="Повторите пароль"
+          placeholder="Confirm password"
         ></t-input>
         <img
           class="absolute transform -translate-y-1/2 top-1/2 left-4"
@@ -57,7 +57,7 @@
           class="!pl-12"
           variant="strong"
           type="email"
-          placeholder="Электронная почта"
+          placeholder="Enter your email"
         ></t-input>
         <img
           class="absolute transform -translate-y-1/2 top-1/2 left-4"
@@ -66,14 +66,14 @@
         />
       </div>
       <p>
-        Регистрируясь вы принимаете условия<br />
+        By registering you accept the Terms and Conditions<br />
         <a href="#" class="font-semibold text-primary"
-          >пользовательского соглашения</a
+          >User Agreement</a
         >
       </p>
       <t-button type="submit" variant="primary">
         <div class="flex items-center justify-center py-2">
-          <span>Зарегистрироваться</span>
+          <span>Register</span>
           <img class="ml-2" src="/img/icon/next.svg" alt="" />
         </div>
       </t-button>
@@ -82,9 +82,9 @@
 </template>
 
 <script>
-import sectionSocial from './section-social.vue'
+
 export default {
-  components: { sectionSocial },
+  components: {  },
   data() {
     return {
       user: {

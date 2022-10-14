@@ -28,7 +28,7 @@ class AuthController {
 
       return response.json({
         status: 'success',
-        message: 'Вы успешно зарегистрированы!',
+        message: 'User registered successfully!',
         data: token,
       })
     } catch (error) {
@@ -48,7 +48,7 @@ class AuthController {
 
       return response.json({
         status: 'success',
-        message: 'Вы успешно вошли',
+        message: 'Login Successfully',
         data: token,
       })
     } catch (error) {
@@ -74,6 +74,7 @@ class AuthController {
             'fullname',
             'username',
             'email',
+            'created_at',
             'avatar',
             'balance',
             'balance_demo',

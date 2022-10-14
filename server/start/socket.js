@@ -6,7 +6,8 @@ const Env = use('Env')
 const User = use('App/Models/User')
 const Crash = use('App/Models/Crash')
 const CrashBet = use('App/Models/CrashBet')
-
+const CrashRate = use('App/Models/Rate')
+const moment= require('moment') 
 const jwt = require('jwt-simple')
 const rnd = require('random-number')
 
@@ -54,7 +55,7 @@ const crashInstance = io
         if (game.start_at < Date.now()) {
           return callback({
             status: 'error',
-            message: 'Игра уже начата! Повторите в следующей.',
+            message: 'The game has already started! Try the next one.',
           })
         }
         if (
@@ -64,7 +65,7 @@ const crashInstance = io
         ) {
           return callback({
             status: 'error',
-            message: 'Недостаточно средств на счёте',
+            message: 'Insufficient funds in the account',
           })
         }
         try {
@@ -82,12 +83,12 @@ const crashInstance = io
         } catch (e) {
           return callback({
             status: 'error',
-            message: 'Вы уже учавствуете в игре!',
+            message: 'You are already in the game!',
           })
         }
         callback({
           status: 'success',
-          message: 'Ваша ставка принята!',
+          message: 'Bet is placed successfully!',
         })
       })
       .on('bet:take', async () => {
@@ -120,10 +121,16 @@ const crashInstance = io
   })
 
 Event.on('crash::start', async () => {
-  const timeout = 1000 * 15
+  const timeout = 1000 * 1800
   const step = 0.01
+  const date = new Date()
   const start = Date.now() + timeout
-  const rate = rnd({ min: 1, max: 3 })
+  
+  const time = moment().format('HH:mm')
+       
+  const crashRate = await CrashRate.query().where('time','>', time).orderBy('time', 'asc').pluck('rate').first()
+  
+  const rate = crashRate.rate
 
   const game = await Crash.create({
     start_at: start,

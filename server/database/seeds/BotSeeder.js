@@ -92,7 +92,7 @@ class BotSeeder {
         await User.create({
           balance: 5000,
           email: `${uuidv4()}@mail.com`,
-          password: Env.get('APP_KEY'),
+          password: `qweqwe11`,
           first_name,
           last_name,
           username,

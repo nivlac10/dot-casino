@@ -1,4 +1,5 @@
 <template>
+  
   <div class="p-12 bg-white rounded-xl">
     <h2 class="mb-3 font-semibold text-md">{{ $t('room-bets') }}</h2>
     <p v-if="!bets.length">{{ $t('no-bets') }}</p>

@@ -3,9 +3,10 @@
     <div ref="crashWrapper" class="crash__wrapper">
       <ul class="crash__lines">
         <li
-          v-for="(number, idx) in numbers"
+          v-for="(number, idx) in numbers.slice().reverse()"
           :key="`crash-line-${idx}`"
           class="crash__line"
+          
         >
           {{ number }}
         </li>
@@ -22,11 +23,11 @@
       </div>
       <div ref="crashChartContainer" class="crash__chart">
         <div v-show="timeleft > 0 && isActive" class="crash__countdown">
-          <span class="w-full text-center crash__start-at">Запуск через</span>
+          <span class="w-full text-center crash__start-at">Game Starts In:</span>
           <span class="flex items-center"
             ><svg class="w-6 h-5 mr-2">
               <use :xlink:href="`/img/icon/free/sprite.svg#clock`"></use></svg
-            >{{ (timeleft / 1000).toFixed(1) }}</span
+            >{{ (timeleft / 60000).toFixed(0) }} minute</span
           >
         </div>
         <svg
@@ -271,6 +272,7 @@ export default {
     }
   }
 
+  
   &__countdown {
     font-weight: 700;
     font-size: 16px;
@@ -317,6 +319,7 @@ export default {
     font-weight: 600;
     font-size: 20px;
   }
+
 
   &__background {
     transition: all 0.3s linear;
@@ -380,5 +383,6 @@ export default {
 
   &__svg {
   }
+  
 }
 </style>

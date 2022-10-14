@@ -10,9 +10,9 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'casino',
+    title: 'Dot Casino',
     htmlAttrs: {
-      lang: 'ru',
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
@@ -40,6 +40,7 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     '~/plugins/vue-tailwind.client.js',
+    '~/plugins/firebase.js',
     { src: '~/plugins/v-tooltip.client.js', mode: 'client' },
     { src: '~/plugins/vt-notification.client.js', mode: 'client' },
     { src: '~/plugins/axios-handler.client.js', mode: 'client' },
@@ -98,7 +99,7 @@ export default {
         icon: '/img/icon/ru.svg',
       },
     ],
-    defaultLocale: 'ru',
+    defaultLocale: 'en',
     lazy: true,
     langDir: 'lang/',
     strategy: 'no_prefix',

@@ -9,7 +9,9 @@
         }}</span>
       </div>
     </t-button>
-    <t-button variant="primary">{{ $t('wallet') }}</t-button>
+    <nuxt-link :to="{name: 'wallet'}">
+      <t-button variant="primary">{{ $t('wallet') }}</t-button>
+    </nuxt-link>
   </div>
 </template>
 
