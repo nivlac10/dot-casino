@@ -60,7 +60,7 @@ class WalletController {
                 const user = await User.find(data.uid)
                 user.balance = user.balance + amount
                 const add = await user.save()
-                response.send("Successfuly deposited RM" + amount)
+                response.send("Successfuly deposited SGD" + amount)
             } else if (data.status === 'Approved' && data.method === 'Withdrawal') {
                 //Get the amount user want to withdrawal
                 const amount = parseInt(data.amount)
@@ -68,7 +68,7 @@ class WalletController {
                 const user = await User.find(data.uid)
                 user.balance = user.balance - amount
                 const add = await user.save()
-                response.send("Successfuly withdrawn RM" + amount)
+                response.send("Successfuly withdrawn SGD" + amount)
             } else if (data.status === 'Rejected') {
                 response.send('Succesfully Updated with Rejection')
             }

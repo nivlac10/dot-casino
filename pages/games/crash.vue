@@ -180,7 +180,7 @@ export default {
           {
             group: 'default',
             type: 'error',
-            text: 'Недостаточно средств',
+            text: 'Insufficient Funds',
           },
           4000
         )

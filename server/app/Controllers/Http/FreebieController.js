@@ -37,7 +37,7 @@ class FreebieController {
       await user.freebies().create({ amount })
       return response.status(200).send({
         status: 'success',
-        message: 'Бонус получен',
+        message: 'Bonus received',
         data: {
           amount,
         },
@@ -46,7 +46,7 @@ class FreebieController {
 
     return response.status(200).send({
       status: 'error',
-      message: 'Ожидайте перезарядки таймера!',
+      message: 'Wait for the timer to recharge!!',
     })
   }
 

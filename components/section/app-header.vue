@@ -30,12 +30,7 @@
           :exact-active-class="`header__link--active`"
           >{{ $t('help') }}</nuxt-link
         >
-        <nuxt-link
-          :to="{ name: 'bonus' }"
-          class="header__link"
-          :exact-active-class="`header__link--active`"
-          >{{ $t('bonus') }}</nuxt-link
-        >
+       
       </nav>
       <user-balance class="hidden sm:flex" />
       <nuxt-link

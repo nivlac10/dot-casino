@@ -115,7 +115,7 @@
         <div class="p-4 bg-white xl:p-12 xl:col-span-4 rounded-3xl">
             <h2 class="mb-5 text-lg font-semibold">Transaction History</h2>
             <t-table
-            :headers="['Transaction ID', 'Username', 'Amount', 'Method', 'Status', 'Created Date', 'Last Updated']"
+            :headers="['Transaction ID', 'Username', 'Amount', 'Method', 'Status', 'Created Date', 'Last Updated', 'Receipt']"
             :data="history"
             :per-page="10"
             :class="history-table">
@@ -134,6 +134,7 @@
                     balance: '',
                     username: '',
                     created_at: '',
+                    image_url: '',
                 },
                 history : [],
                 format : '',
@@ -146,7 +147,7 @@
             let transactionHistory = await this.$axios.post('http://127.0.0.1:3333/api/wallet/history', {
                     uid: this.userDetails.id
             })
-            this.history = transactionHistory.data.map(row => [row.id, row.username, row.amount, row.method, row.status, row.created_at, row.updated_at])
+            this.history = transactionHistory.data.map(row => [row.id, row.username, row.amount, row.method, row.status, row.created_at, row.updated_at, row.image_url])
             console.log(this.history)
             const created = this.userDetails.created_at
             this.format = moment(this.created).format("YYYY-MM-DD")
